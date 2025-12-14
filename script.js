@@ -7,7 +7,7 @@ function resetBank() {
 }
 
 function returnToMenu() {
-    window.location.href = "main.html";
+    window.location.href = "index.html";
 }
 
 function validation(event) {
