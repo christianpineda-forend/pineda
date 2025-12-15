@@ -1,11 +1,52 @@
+/* All */
+
 * {
-    margin: 0px;
+    margin: 0;
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: rgb(45, 45, 54);
+    --bg-color-light: #ffffff;
+    --text-color: #fff;
+}
+
+body {
+    background-color: var(--bg-color-light);
+    color: #000;
+}
+
+.output {
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.output.success {
+    color: green;
+    font-weight: bold;
+}
+
+.output.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Footer */
+
+.home-footer {
+    border-top: 10px solid rgb(145, 52, 52);
+    background-color: rgb(135, 28, 28);
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .copyright-container {
     color: white;
-    padding: 55px 0;
     text-align: center;
 }
 
@@ -14,59 +55,28 @@
     color: white;
 }
 
-.copyright-container a:hover {
-    color: rgb(56, 56, 56);
-}
-
-.reset-button {
-    position: fixed; 
-    bottom: 20px;  
-    right: 30px;    
-    z-index: 99;   
-    /* Optional styling to make it look like a button */
-    background-color: #5e1111;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Root */
-
-:root {
-    --bg-color: rgb(45, 45, 54);
-    --bg-color-light: #ffffff;
-    --text-color: #fff;
-}
-
-/* Icon */
+/* Icon / Header */
 
 #icon {
-    width: 100px;
+    width: 50px;
     height: auto;
-    border: black solid 2px;
-    margin: 0;
+}
+
+#icon-large {
+    width: 100px;
 }
 
 .icon-container {
-    padding-top: 30px;
-    margin-left: 150px;
-    margin-right: 150px;
-    display: block;
-    align-content: center;
+    padding-top: 25px;
+    margin: 0 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.icon-iconcontain {
+.icon-iconcontain h3 {
     font-size: 1.5em;
     color: rgb(246, 246, 246);
-    display: inline;
-    float: left;
-}
-
-.icon-iconcontain-icon {
-    float: right;
 }
 
 .home-header1 {
@@ -85,58 +95,75 @@
     display: flex;
     min-height: 30px;
     padding-left: 10%;
+    align-items: center;
 }
 
 .navbar ul {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-.navbar li a {
-    color: rgb(255, 255, 255);
-    font-size: 15px;
-    background-color: rgb(135, 28, 28);
-    height: 2vh;
-    text-decoration: none;
-    padding: 15px;
+    list-style: none;
     display: flex;
-    text-align: center;
-}
-
-.navbar li a:hover {
-    background-color: rgb(110, 26, 26);
 }
 
 .navbar li {
     float: left;
 }
 
-/* Section 1 */
+.navbar li a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    background-color: rgb(135, 28, 28);
+}
+
+.navbar li a:hover {
+    background-color: rgb(110, 26, 26);
+}
+
+.navbar li a.active:not(#exit) {
+    background-color: rgb(110, 26, 26);
+    font-weight: bold;
+    border-bottom: 3px solid #fff;
+}
+
+/* Hamburger Menu */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Sections */
+
+.section {
+    display: none;
+    min-height: 50vh;
+}
 
 .home-section-section1 {
     background-color: var(--bg-color-light);
-    height: 70vh;
-}
-
-.home-footer {
-    border-top: 10px solid rgb(145, 52, 52);
-    background-color: rgb(135, 28, 28);
-    height: 20vh;
 }
 
 .section-container {
-    padding: 100px;
-    padding-left: 250px;
-    padding-right: 250px;
+    padding: 100px 250px;
 }
 
 .createaccount {
     border: #a8a8a89c solid 2.5px;
     border-radius: 25px;
-    text-decoration: none;
     height: 350px;
     width: 250px;
+    margin: 0 auto;
 }
 
 .section-container a {
@@ -146,53 +173,51 @@
     float: left;
 }
 
-.createaccount-content img, .createaccount-content h2 {
-    width: 100px;
-    height: 100px;
-    margin-left: 80px;
-    margin-right: 80px;
-    font-size: 20px;
+.createaccount-content {
+    padding: 80px 0;
     text-align: center;
 }
 
-.createaccount-content {
-    padding: 80px 0px;
+.createaccount-content img {
+    width: 100px;
+    height: 100px;
 }
 
 .introduction {
     margin-top: 50px;
+    text-align: center;
 }
 
 .introduction h1 {
     font-size: 5em;
-    
 }
 
 .introduction p {
     font-size: 1.1em;
 }
 
-/* Create Account */
+/* Forms / Account Info */
 
 .ca-section-section1 {
     padding: 50px 150px;
 }
 
-.account-stable {
+.account-stable,
+.display-stable {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 25px;
-    padding-bottom: 100px;
+    padding: 100px 0;
 }
 
 .account-container {
     padding: 50px 20px;
     width: 20vw;
-    height: auto;
     border: #a8a8a89c solid 2px;
     box-shadow: 0 2px 5px #505050;
     border-radius: 5px;
+    background-color: #fff;
+    color: #000;
 }
 
 .account-content {
@@ -202,18 +227,190 @@
 
 .account-content h2 {
     color: #5c5c5c;
-    float: none;
-}
-
-#account-form input {
-    width: 200px;
-    height: 20px;
 }
 
 .account-info {
+    padding-top: 20px;
     font-size: 13px;
     font-weight: bold;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 
+.account-info form input {
+    width: 200px;
+    height: 25px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.account-info form button {
+    margin: 5px;
+    padding: 7px 15px;
+    border: none;
+    background-color: rgb(135, 28, 28);
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.account-info form button:hover {
+    background-color: rgb(110, 26, 26);
+}
+
+/* Table Output */
+
+#searchResult,
+#displayOutput {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+#searchResult table,
+#displayOutput table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+}
+
+#searchResult th,
+#searchResult td,
+#displayOutput th,
+#displayOutput td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+#searchResult th,
+#displayOutput th {
+    background-color: rgb(135, 28, 28);
+    color: white;
+}
+
+@media (max-width: 1177px) {
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+        transition: 0.4s;
+    }
+
+    .home-header2 {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .navbar {
+        width: 100%;
+        position: relative;
+    }
+
+    .navbar-container {
+    width: 100%;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute; 
+        top: 100%; 
+        left: 0;
+        width: 100%; 
+        background-color: rgb(135, 28, 28);
+        margin: 0;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .navbar li a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        display: block;
+    }
+
+    .section-container {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .account-container {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .introduction h1 {
+        font-size: 3em;
+    }
+
+    .introduction p {
+        font-size: 1em;
+    }
+
+    #icon-large {
+        width: 80px;
+    }
+
+    .account-info form input {
+        width: 90%;
+    }
+
+    .account-info form button {
+        width: 45%;
+        margin: 5px 2.5%;
+    }
+
+    #searchResult th,
+    #searchResult td,
+    #displayOutput th,
+    #displayOutput td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .createaccount {
+        display: none;
+    }
+
+    .section {
+    min-height: 50vh;
+    }
+
+    .section-container {
+        padding: 200px 0;
+    }
+
+    .section-container h1 {
+        font-size: 4em;
+    }
+
+    #icon {
+        display: none;
+    }
 }

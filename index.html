@@ -3,68 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Banko Lipunan</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
     <header class="home-header1">
-        <div class=icon-container>
+        <div class="icon-container">
             <span class="icon-iconcontain">
                 <h3>BANKO LIPUNAN</h3>
             </span>
             <span class="icon-iconcontain-icon">
-                <a href="index.html"><img src="resources/images/icon/icon.png" id="icon"></a>
+                <a href="#" onclick="showSection('home')"><img src="resources/images/icon/icon.png" id="icon"></a>
             </span>
         </div>
     </header>
+
+    <!-- Navbar -->
     <header class="home-header2">
         <div class="navbar-container">
             <nav class="navbar">
-                <ul>
-                    <li><a href="createaccount.html">Create Account</a></li>
-                    <li><a href="#">Deposit Money</a></li>
-                    <li><a href="#">Withdraw Money</a></li>
-                    <li><a href="#">Check Balance</a></li>
-                    <li><a href="#">Display All Accounts</a></li>
-                    <li><a href="index.html">Exit</a></li>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                
+                <ul id="nav-links">
+                    <li><a href="#" onclick="showSection('createAccount')">Create Account</a></li>
+                    <li><a href="#" onclick="showSection('depositMoney')">Deposit Money</a></li>
+                    <li><a href="#" onclick="showSection('withdraw')">Withdraw Money</a></li>
+                    <li><a href="#" onclick="showSection('checkBalance')">Check Balance</a></li>
+                    <li><a href="#" onclick="showSection('display')">Display All Accounts</a></li>
+                    <li><a href="#" onclick="showSection('search')">Search Account</a></li>
+                    <li><a href="#" onclick="showSection('home')" id="exit">Exit</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main>
-        <section class="home-section-section1">
-            <div class="section-container">
-                <a href="createaccount.html">
-                    <div class="createaccount">
-                        <div class="createaccount-content">
-                            <img src="resources/images/icon/createacc.png">
-                            <h2>Create Account</h2>
+        <!-- Home Section -->
+        <div id="home" class="section">
+            <section class="home-section-section1">
+                <div class="section-container">
+                    <a href="#" onclick="showSection('createAccount')">
+                        <div class="createaccount">
+                            <div class="createaccount-content">
+                                <img src="resources/images/icon/createacc.png">
+                                <h2>Create Account</h2>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <div class="introduction">
-                    <h1>Banko Lipunan</h1>
-                    <p>The new and future of Filipinos!</p>
-                    <div class="container-aboutus">
-                        
+                    </a>
+                    <div class="introduction">
+                        <h1>Banko Lipunan</h1>
+                        <p>The new and future of Filipinos!</p><br>
+                        <img src="resources/images/icon/icon.png" id="icon-large">
+                        <div class="container-aboutus"></div>
                     </div>
                 </div>
-            </div>
-        </section> 
+            </section> 
+        </div>
+
+        <!-- Create Account Section -->
+        <div id="createAccount" class="section">
+            <section class="ca-section-section1">
+                <h3>Create Account</h3>
+                <h4>Account Information</h4>
+                <hr>
+            </section>
+            <section class="accountinfo">
+                <div class="account-stable">
+                    <div class="account-container">
+                        <div class="account-content">
+                            <h2>Account Detail</h2>
+                        </div>
+                        <div class="account-info">
+                            <form onsubmit="createAccount(event)">
+                                <label>Account Number</label><br>
+                                <input id="createAccountNumber" placeholder="Account Number" required><br><br>
+
+                                <label>Name</label><br>
+                                <input id="createName" placeholder="Ex. Christian" required><br><br>
+
+                                <label>Balance</label><br>
+                                <input id="createBalance" placeholder="Ex. 100" type="number" min="0" required><br><br>
+
+                                <button type="button" onclick="returnToMenu()">Return</button>
+                                <button type="submit">Submit</button>
+                            </form>
+
+                            <div class="output" id="createOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Deposit Money Section -->
+        <div id="depositMoney" class="section">
+            <section class="ca-section-section1">
+                <h3>Deposit Money</h3>
+                <hr>
+            </section>
+            <section class="accountinfo">
+                <div class="account-stable">
+                    <div class="account-container">
+                        <div class="account-content">
+                            <h2>Deposit Money</h2>
+                        </div>
+                        <div class="account-info">
+                            <form onsubmit="depositMoney(event)">
+                                <label>Account Number</label><br>
+                                <input id="depositAccountNumber" placeholder="Account Number" required><br><br>
+
+                                <label>Deposit Amount</label><br>
+                                <input id="depositBalance" placeholder="Ex. 100" type="number" min="0" required><br><br>
+
+                                <button type="button" onclick="returnToMenu()">Return</button>
+                                <button type="submit">Deposit</button>
+                            </form>
+
+                            <div class="output" id="depositOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Withdraw Section -->
+        <div id="withdraw" class="section">
+            <section class="ca-section-section1">
+                <h3>Withdraw Money</h3>
+                <hr>
+            </section>
+            <section class="accountinfo">
+                <div class="account-stable">
+                    <div class="account-container">
+                        <div class="account-content">
+                            <h2>Withdraw Money</h2>
+                        </div>
+                        <div class="account-info">
+                            <form onsubmit="withdraw(event)">
+                                <label>Account Number</label><br>
+                                <input id="withdrawAccountNumber" placeholder="Account Number" required><br><br>
+
+                                <label>Withdrawal Amount</label><br>
+                                <input id="withdrawBalance" placeholder="Ex. 100" type="number" min="0" required><br><br>
+
+                                <button type="button" onclick="returnToMenu()">Return</button>
+                                <button type="submit">Withdraw</button>
+                            </form>
+
+                            <div class="output" id="withdrawOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Check Balance Section -->
+        <div id="checkBalance" class="section">
+            <section class="ca-section-section1">
+                <h3>Check Balance</h3>
+                <hr>
+            </section>
+            <section class="accountinfo">
+                <div class="display-stable">
+                    <div class="account-container">
+                        <div class="account-content">
+                            <h2>Check Balance</h2>
+                        </div>
+                        <div class="account-info">
+                            <form onsubmit="checkBalance(event)">
+                                <label>Account Number</label><br>
+                                <input id="checkAccountNumber" placeholder="Account Number" required><br><br>
+
+                                <button type="button" onclick="returnToMenu()">Return</button>
+                                <button type="submit">Check</button>
+                            </form>
+
+                            <div class="output" id="checkOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Display Section -->
+        <div id="display" class="section">
+            <section class="ca-section-section1">
+                <h3>Display All Accounts</h3>
+                <hr>
+            </section>
+
+            <section class="accountinfo">
+                <div class="display-stable">
+                    <div class="account-container">
+                        <div class="account-content">
+                            <h2>Display All Accounts</h2>
+                        </div>
+
+                        <div class="account-info">
+                            <form onsubmit="displayAccounts(event)">
+                                <button type="button" onclick="returnToMenu()">Return</button>
+                                <button type="submit">Display</button>
+                            </form>
+
+                            <div id="displayOutput"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Search Section -->
+        <div id="search" class="section">
+            <section class="ca-section-section1">
+                <h3>Search Account</h3>
+                <hr>
+            </section>
+
+            <section class="accountinfo">
+                <div class="display-stable">
+                    <div class="account-container">
+                        <div class="account-content">
+                            <h2>Search Account</h2>
+                        </div>
+
+                        <div class="account-info">
+                            <form onsubmit="searchAccount(event)">
+                                <label>Name</label><br>
+                                <input id="searchName" placeholder="Ex. Christian" required><br><br>
+
+                                <button type="button" onclick="returnToMenu()">Return</button>
+                                <button type="submit">Search</button>
+                            </form>
+
+                            <div id="searchResult"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
+
+    <!-- Footer -->
     <footer class="home-footer">
         <div class="copyright-container">
             <p>&copy; 2025 <b>Banko Lipunan</b>. All Rights Reserved.</p>
-            <p><a href="aboutus.html">About Us</a> | Version 1</p>
+            <p>Version 1</p>
         </div>
     </footer>
-    <button class="reset-button" onclick="resetBank()">
-        Reset Bank
-    </button>
 </body>
 </html>
