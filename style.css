@@ -291,7 +291,7 @@ body {
     color: white;
 }
 
-@media (max-width: 1177px) {
+@media (max-width: 1182px) {
 
     /* Hamburger Menu */
     .hamburger {
@@ -432,3 +432,4 @@ body {
     }
 
 }
+
