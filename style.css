@@ -413,4 +413,18 @@ body {
     #icon {
         display: none;
     }
+
+    .icon-container {
+        padding-top: 25px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon-iconcontain h3 {
+        font-size: 1.5em;
+        color: rgb(246, 246, 246);
+    }
+
 }

@@ -61,6 +61,8 @@ function createAccount(e) {
     e.preventDefault();
     const output = document.getElementById("createOutput");
 
+    output.className = "output";
+
     try {
         const accNo = document.getElementById("createAccountNumber").value.trim();
         const name = document.getElementById("createName").value.trim();
@@ -83,6 +85,8 @@ function createAccount(e) {
 function depositMoney(e) {
     e.preventDefault();
     const output = document.getElementById("depositOutput");
+
+    output.className = "output";
 
     try {
         const accNo = document.getElementById("depositAccountNumber").value.trim();
@@ -108,6 +112,8 @@ function withdraw(e) {
     e.preventDefault();
     const output = document.getElementById("withdrawOutput");
 
+    output.className = "output";
+
     try {
         const accNo = document.getElementById("withdrawAccountNumber").value.trim();
         const amount = parseFloat(document.getElementById("withdrawBalance").value);
@@ -131,6 +137,9 @@ function withdraw(e) {
 function checkBalance(e) {
     e.preventDefault();
     const output = document.getElementById("checkOutput");
+
+    output.className = "output";
+
 
     try {
         const accNo = document.getElementById("checkAccountNumber").value.trim();
